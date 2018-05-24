@@ -19,12 +19,10 @@ let history = createHistory()
 firebaseApp.auth().onAuthStateChanged(user => {
 
     if (user) {
-        console.log("user has signed in or up", user)
         const {email} = user
         store.dispatch(logUser(email))
         history.push("/app")
     } else {
-        console.log("User has signed out or still eneds to sign in.")
         history.push("/signin")
     }
 })

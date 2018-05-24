@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { firebaseApp } from "../Firebase";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
+import AddGoal from "./AddGoal";
+import GoalList from "./GoalList";
+import CompleteGoalList from "./CompletedGoalList";
 import '../css/App.css';
 
 class App extends Component {
@@ -12,6 +15,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h3>Goal Maker</h3>
+        <AddGoal />
+        <hr />
+        <h4>Goals</h4>
+        <GoalList />
+        <hr />
+        <h4>Complete Goals</h4>
+        <CompleteGoalList />
+        <hr />
         <button
           className="btn btn-danger"
           onClick={() => this.signOut()}
@@ -20,8 +32,9 @@ class App extends Component {
     );
   }
 }
-function mapStateToProps(state){
-  return{
+function mapStateToProps(state) {
+
+  return {
 
   }
 }
